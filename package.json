@@ -1,0 +1,42 @@
+{
+  "name": "dialogue",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run browserify && babel-node index.js",
+    "browserify": "browserify client/index.js -t babelify --outfile dist/index.js",
+    "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js 'test/**/*.@(js|jsx)'",
+    "test:watch": "npm run test -- --watch --watch-extensions jsx"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.14.2",
+    "cellx": "^1.5.0",
+    "ejs": "^2.3.4",
+    "express": "^4.13.3",
+    "frzr": "^0.8.14",
+    "immutable": "^3.7.6",
+    "lodash": "^4.0.0",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.4.0",
+    "babel-core": "^6.4.0",
+    "babel-preset-es2015": "^6.3.13",
+    "babelify": "^7.2.0",
+    "browserify": "^13.0.0",
+    "chai": "^3.4.1",
+    "chai-immutable": "^1.5.3",
+    "mocha": "^2.3.4",
+    "webpack": "^1.12.11",
+    "webpack-dev-server": "^1.14.1"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  }
+}
